@@ -13,25 +13,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function(req, res){
- 	Balada.find(function(err, result){
-        res.send(result);
-     });
+ 	console.log("Inda não implementado");
 });
-
- app.post('/balada', function(req, res){
- 	if(req.body.nome){
- 		Balada.find({ nome: req.body.nome}, function(err, result){
- 			res.send(result);
- 		});
- 	}
- });
 
  app.post('/',function(req,res){
    var novo = new Balada(req.body);
- 	novo.save(function(err){
- 		if(err) throw err;
- 		res.send("Dados Salvos com sucesso!")
- 	});
+ 	 console.log(novo);
  });
  app.listen(1337);
 
